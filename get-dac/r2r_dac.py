@@ -11,11 +11,11 @@ class R2R_DAC:
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.gpio_bits, GPIO.OUT, initial = 0)
 
-    def deinit(self) -> None:
+    def deinit(self):
         GPIO.output(self.gpio_bits, 0)
         GPIO.cleanup()
 
-    def set_number(self, number) -> None:
+    def set_number(self, number):
         if (0 <= number <= 255):
             binary = [int(el) for el in bin(number)[2:].zfill(8)]
             GPIO.output(self.gpio_bits, binary)
@@ -23,7 +23,7 @@ class R2R_DAC:
             GPIO.output(self.gpio_bits, 0)
 
 
-    def set_voltage(self, voltage) -> None:
+    def set_voltage(self, voltage):
 
         userin = voltage
 
