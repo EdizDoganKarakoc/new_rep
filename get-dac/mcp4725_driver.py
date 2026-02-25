@@ -32,7 +32,7 @@ class MCP4725:
         if not isinstance(voltage, (int, float)):
             print("Invalid input.")
         if voltage < 0 or voltage > 4.2:
-            print(f"Input out of range [0, 4.2].")
+            print("Input out of range [0, 4.2].")
         number = int(round(voltage / self.dynamic_range * 4095))
         self.set_number(number)
 

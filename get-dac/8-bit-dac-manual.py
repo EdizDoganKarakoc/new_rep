@@ -6,8 +6,6 @@ dac_bits = [16, 20, 21, 25, 26, 17, 27, 22]
 GPIO.setup(dac_bits, GPIO.OUT)
 
 
-
-
 dynamic_range = 3.144
 
 def voltage_to_number(voltage):
@@ -21,9 +19,6 @@ def voltage_to_number(voltage):
 def number_to_dac(number):
     bins = [int(bit) for bit in bin(number)[2:].zfill(8)]
     GPIO.output(dac_bits, bins)
-
-
-
 
 
 
