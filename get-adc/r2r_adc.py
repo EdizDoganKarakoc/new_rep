@@ -36,7 +36,7 @@ class R2R_ADC:
 
 if __name__ == "__main__":
     try:
-        adc = R2R_ADC(3.3)
+        adc = R2R_ADC(3.3, 0.0002)
 
         while True:
             print(adc.get_sc_voltage())
